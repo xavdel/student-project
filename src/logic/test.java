@@ -35,7 +35,7 @@ public class test {
 	     arc.carac_attaques = new HashMap<String, arc>();
 	     String f;
 	     if (args.length ==0){
-	    	  f = "/home/ad31/eclipse/java-neon4/eclipse/logic/src/logic/Graph1-pourXavier.gfx";
+	    	  f = "/home/ad31/eclipse/java-neon4/eclipse/logic/src/logic/Graph2-pourXavier.gfx";
 	     }else{
 	    	  f=args[0];
 	     }
@@ -110,7 +110,7 @@ public class test {
 		if (!(temp.ori.contains("to")||temp.dest.contains("to"))){
 		//Idem que l'attaque pour Pra
 		BoolExpr pra=ctx.mkBoolConst("Pr"+temp.ori);
-		BoolExpr bool2 = ctx.mkImplies(pra,Sommet.carac_sommets.get(temp.dest).bool);
+		BoolExpr bool2 = ctx.mkImplies(pra,Sommet.carac_sommets.get(temp.ori).bool);
 		for (BoolExpr test : s.getAssertions()){
 			if (test.equals(bool2)){
 				i=1;
