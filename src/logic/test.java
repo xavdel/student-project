@@ -35,7 +35,7 @@ public class test {
 	     arc.carac_attaques = new HashMap<String, arc>();
 	     String f;
 	     if (args.length ==0){
-	    	  f = "/home/ad31/eclipse/java-neon4/eclipse/logic/src/logic/Graph2-pourXavier.gfx";
+	    	  f = "/home/ad31/eclipse/java-neon4/eclipse/logic/src/logic/Graph1-pourXavier.gfx";
 	     }else{
 	    	  f=args[0];
 	     }
@@ -86,16 +86,21 @@ public class test {
 	     
 	for (arc temp :arc.carac_attaques.values()){
 		BoolExpr bool;
+		BoolExpr bool2;
 		if (!(temp.ori.contains("to")||temp.dest.contains("to"))){
-		// (Ak et a) -> Inb avec k=(a,b)
-		// (resolution INb si une relation est de la forme (x,b) existe dans les attaques)
-		// or k est une attaque et k est de la forme k=(a,b)
+		int i=0;
+		
+		BoolExpr ina=ctx.mkBoolConst("In"+temp.dest);
+		bool2=ctx.mkImplies(ina,ctx.mkNot(Sommet.carac_sommets.get(temp.dest).bool));
+		for (BoolExpr test : s.getAssertions()){
+			if (test.equals(bool2)){
+				i=1;
+			}
+		}
 		bool=ctx.mkImplies(ctx.mkAnd(arc.active(temp, ctx, true, true), Sommet.carac_sommets.get(temp.ori).bool), 
-		ctx.mkNot(Sommet.carac_sommets.get(temp.dest).bool));
-		System.out.println("Support");
-		System.out.println(temp);
-		System.out.println(bool);
+		ina);
 		s.add(bool);
+		if(i==0) s.add(bool2);
 		}
 	}
 	
@@ -103,14 +108,18 @@ public class test {
 	for (arc temp : arc.carac_appuis.values()){
 		BoolExpr bool;
 		if (!(temp.ori.contains("to")||temp.dest.contains("to"))){
-		
 		//Idem que l'attaque pour Pra
+		BoolExpr pra=ctx.mkBoolConst("Pr"+temp.ori);
+		BoolExpr bool2 = ctx.mkImplies(pra,Sommet.carac_sommets.get(temp.dest).bool);
+		for (BoolExpr test : s.getAssertions()){
+			if (test.equals(bool2)){
+				i=1;
+			}
+		}
 		bool=ctx.mkImplies(ctx.mkAnd(arc.active(temp, ctx, true, false),Sommet.carac_sommets.get(temp.dest).bool),
-		Sommet.carac_sommets.get(temp.ori).bool);
-		System.out.println("Attaque");
-		System.out.println(temp);
-		System.out.println(bool);
+		pra);
 		s.add(bool);
+		if(i==0) s.add(bool2);
 		}
 	}
 	
@@ -120,5 +129,6 @@ public class test {
 	System.out.println("Résultat : "+s.check());
 	System.out.println("Une solution");
 	System.out.println(s.getModel());
+
 	}
 }
