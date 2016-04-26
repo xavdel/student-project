@@ -68,7 +68,7 @@ static BoolExpr active(arc utilise, Context ctx, Boolean actifoupas, Boolean att
 						ctx.mkAnd(Sommet.carac_sommets.get(sup.ori).bool,
 								active(sup,ctx,true, false)),
 						ctx.mkOr(ctx.mkNot(Sommet.carac_sommets.get(att.ori).bool),
-								active(sup,ctx,false, true)));
+								active(att,ctx,false, true)));
 
 				utilise.inactif=ctx.mkOr(
 						ctx.mkOr(ctx.mkNot(Sommet.carac_sommets.get(sup.ori).bool),
