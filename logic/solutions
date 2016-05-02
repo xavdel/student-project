@@ -1,0 +1,532 @@
+Graph 1
+Support
+(=> (and true |0|) (not |3|))
+Support
+(=> (and true |2|) (not |2|))
+Support
+(=> (and true |3|) (not |2|))
+Attaque
+(=> (and true |0|) |0|)
+Attaque
+(=> (and true |3|) |1|)
+Conversion s3
+(declare-fun |3| () Bool)
+(declare-fun |0| () Bool)
+(declare-fun |2| () Bool)
+(declare-fun |1| () Bool)
+(assert (=> (and true |0|) (not |3|)))
+(assert (=> (and true |2|) (not |2|)))
+(assert (=> (and true |3|) (not |2|)))
+(assert (=> (and true |0|) |0|))
+(assert (=> (and true |3|) |1|))
+
+Résultat : SATISFIABLE
+Solution
+(define-fun |1| () Bool
+  false)
+(define-fun |3| () Bool
+  false)
+(define-fun |0| () Bool
+  true)
+(define-fun |2| () Bool
+  false)
+
+Graph 2
+Support
+(=> (and |10| true |0|) (not |3|))
+Support
+(=> (and true |2|) (not |2|))
+Support
+(=> (and (or (not |9|) false) |3|) (not |2|))
+Attaque
+(=> (and true |0|) |0|)
+Attaque
+(=> (and true |3|) |1|)
+Conversion s3
+(declare-fun |3| () Bool)
+(declare-fun |0| () Bool)
+(declare-fun |10| () Bool)
+(declare-fun |2| () Bool)
+(declare-fun |9| () Bool)
+(declare-fun |1| () Bool)
+(assert (=> (and |10| true |0|) (not |3|)))
+(assert (=> (and true |2|) (not |2|)))
+(assert (=> (and (or (not |9|) false) |3|) (not |2|)))
+(assert (=> (and true |0|) |0|))
+(assert (=> (and true |3|) |1|))
+
+Résultat : SATISFIABLE
+Solution
+(define-fun |1| () Bool
+  true)
+(define-fun |3| () Bool
+  true)
+(define-fun |0| () Bool
+  false)
+(define-fun |10| () Bool
+  true)
+(define-fun |2| () Bool
+  false)
+
+Graph 3
+Support
+(=> (and true |71|) (not |72|))
+Support
+(=> (and true |1|) (not |2|))
+Support
+(=> (and true |60|) (not |61|))
+Support
+(=> (and true |70|) (not |71|))
+Support
+(=> (and true |20|) (not |21|))
+Support
+(=> (and true |31|) (not |32|))
+Support
+(=> (and true |0|) (not |1|))
+Support
+(=> (and true |42|) (not |43|))
+Support
+(=> (and true |4|) (not |5|))
+Support
+(=> (and true |53|) (not |54|))
+Support
+(=> (and (or (not |1|) false) |64|) (not |65|))
+Support
+(=> (and true |10|) (not |11|))
+Support
+(=> (and true |32|) (not |33|))
+Support
+(=> (and true |21|) (not |22|))
+Support
+(=> (and true |43|) (not |44|))
+Support
+(=> (and true |22|) (not |23|))
+Support
+(=> (and (or (not |2|) false) |54|) (not |55|))
+Support
+(=> (and true |11|) (not |12|))
+Support
+(=> (and (or (not |3|) false) |44|) (not |45|))
+Support
+(=> (and true |33|) (not |34|))
+Support
+(=> (and true |3|) (not |4|))
+Support
+(=> (and true |34|) (not |35|))
+Support
+(=> (and true |23|) (not |24|))
+Support
+(=> (and true |12|) (not |13|))
+Support
+(=> (and true |24|) (not |25|))
+Support
+(=> (and (or (not |0|) (and |9| true)) |74|) (not |75|))
+Support
+(=> (and true |13|) (not |14|))
+Support
+(=> (and true |63|) (not |64|))
+Support
+(=> (and true |52|) (not |53|))
+Support
+(=> (and true |41|) (not |42|))
+Support
+(=> (and true |73|) (not |74|))
+Support
+(=> (and true |2|) (not |3|))
+Support
+(=> (and true |30|) (not |31|))
+Support
+(=> (and |27| (or (not |19|) (not |78|) false) |62|) (not |63|))
+Support
+(=> (and true |14|) (not |15|))
+Support
+(=> (and true |51|) (not |52|))
+Support
+(=> (and true |40|) (not |41|))
+Support
+(=> (and true |61|) (not |62|))
+Support
+(=> (and true |50|) (not |51|))
+Support
+(=> (and true |72|) (not |73|))
+Attaque
+(=> (and true |66|) |65|)
+Attaque
+(=> (and true |77|) |76|)
+Attaque
+(=> (and true |28|) |27|)
+Attaque
+(=> (and true |39|) |38|)
+Attaque
+(=> (and true |29|) |28|)
+Attaque
+(=> (and true |18|) |17|)
+Attaque
+(=> (and (or (not |4|) (and |8| true)) |6|) |5|)
+Attaque
+(=> (and |15| |58| true (or (not |18|) false) |8|) |7|)
+Attaque
+(=> (and true |27|) |26|)
+Attaque
+(=> (and true |78|) |77|)
+Attaque
+(=> (and true |46|) |45|)
+Attaque
+(=> (and true |38|) |37|)
+Attaque
+(=> (and true |17|) |16|)
+Attaque
+(=> (and true |56|) |55|)
+Attaque
+(=> (and true |49|) |48|)
+Attaque
+(=> (and true |67|) |66|)
+Attaque
+(=> (and true |58|) |57|)
+Attaque
+(=> (and true |47|) |46|)
+Attaque
+(=> (and (or (not |6|) false) |26|) |25|)
+Attaque
+(=> (and (or (not |7|) false) |36|) |35|)
+Attaque
+(=> (and true |37|) |36|)
+Attaque
+(=> (and true |68|) |67|)
+Attaque
+(=> (and true |79|) |78|)
+Attaque
+(=> (and true |48|) |47|)
+Attaque
+(=> (and (or (not |5|) false) |16|) |15|)
+Attaque
+(=> (and true |57|) |56|)
+Attaque
+(=> (and true |59|) |58|)
+Attaque
+(=> (and true |9|) |8|)
+Attaque
+(=> (and true |7|) |6|)
+Attaque
+(=> (and true |19|) |18|)
+Attaque
+(=> (and true |76|) |75|)
+Attaque
+(=> (and true |69|) |68|)
+Conversion s3
+(declare-fun |72| () Bool)
+(declare-fun |71| () Bool)
+(declare-fun |2| () Bool)
+(declare-fun |1| () Bool)
+(declare-fun |61| () Bool)
+(declare-fun |60| () Bool)
+(declare-fun |70| () Bool)
+(declare-fun |21| () Bool)
+(declare-fun |20| () Bool)
+(declare-fun |32| () Bool)
+(declare-fun |31| () Bool)
+(declare-fun |0| () Bool)
+(declare-fun |43| () Bool)
+(declare-fun |42| () Bool)
+(declare-fun |5| () Bool)
+(declare-fun |4| () Bool)
+(declare-fun |54| () Bool)
+(declare-fun |53| () Bool)
+(declare-fun |65| () Bool)
+(declare-fun |64| () Bool)
+(declare-fun |11| () Bool)
+(declare-fun |10| () Bool)
+(declare-fun |33| () Bool)
+(declare-fun |22| () Bool)
+(declare-fun |44| () Bool)
+(declare-fun |23| () Bool)
+(declare-fun |55| () Bool)
+(declare-fun |12| () Bool)
+(declare-fun |45| () Bool)
+(declare-fun |3| () Bool)
+(declare-fun |34| () Bool)
+(declare-fun |35| () Bool)
+(declare-fun |24| () Bool)
+(declare-fun |13| () Bool)
+(declare-fun |25| () Bool)
+(declare-fun |75| () Bool)
+(declare-fun |74| () Bool)
+(declare-fun |9| () Bool)
+(declare-fun |14| () Bool)
+(declare-fun |63| () Bool)
+(declare-fun |52| () Bool)
+(declare-fun |41| () Bool)
+(declare-fun |73| () Bool)
+(declare-fun |30| () Bool)
+(declare-fun |62| () Bool)
+(declare-fun |78| () Bool)
+(declare-fun |19| () Bool)
+(declare-fun |27| () Bool)
+(declare-fun |15| () Bool)
+(declare-fun |51| () Bool)
+(declare-fun |40| () Bool)
+(declare-fun |50| () Bool)
+(declare-fun |66| () Bool)
+(declare-fun |76| () Bool)
+(declare-fun |77| () Bool)
+(declare-fun |28| () Bool)
+(declare-fun |38| () Bool)
+(declare-fun |39| () Bool)
+(declare-fun |29| () Bool)
+(declare-fun |17| () Bool)
+(declare-fun |18| () Bool)
+(declare-fun |6| () Bool)
+(declare-fun |8| () Bool)
+(declare-fun |7| () Bool)
+(declare-fun |58| () Bool)
+(declare-fun |26| () Bool)
+(declare-fun |46| () Bool)
+(declare-fun |37| () Bool)
+(declare-fun |16| () Bool)
+(declare-fun |56| () Bool)
+(declare-fun |48| () Bool)
+(declare-fun |49| () Bool)
+(declare-fun |67| () Bool)
+(declare-fun |57| () Bool)
+(declare-fun |47| () Bool)
+(declare-fun |36| () Bool)
+(declare-fun |68| () Bool)
+(declare-fun |79| () Bool)
+(declare-fun |59| () Bool)
+(declare-fun |69| () Bool)
+(assert (=> (and true |71|) (not |72|)))
+(assert (=> (and true |1|) (not |2|)))
+(assert (=> (and true |60|) (not |61|)))
+(assert (=> (and true |70|) (not |71|)))
+(assert (=> (and true |20|) (not |21|)))
+(assert (=> (and true |31|) (not |32|)))
+(assert (=> (and true |0|) (not |1|)))
+(assert (=> (and true |42|) (not |43|)))
+(assert (=> (and true |4|) (not |5|)))
+(assert (=> (and true |53|) (not |54|)))
+(assert (=> (and (or (not |1|) false) |64|) (not |65|)))
+(assert (=> (and true |10|) (not |11|)))
+(assert (=> (and true |32|) (not |33|)))
+(assert (=> (and true |21|) (not |22|)))
+(assert (=> (and true |43|) (not |44|)))
+(assert (=> (and true |22|) (not |23|)))
+(assert (=> (and (or (not |2|) false) |54|) (not |55|)))
+(assert (=> (and true |11|) (not |12|)))
+(assert (=> (and (or (not |3|) false) |44|) (not |45|)))
+(assert (=> (and true |33|) (not |34|)))
+(assert (=> (and true |3|) (not |4|)))
+(assert (=> (and true |34|) (not |35|)))
+(assert (=> (and true |23|) (not |24|)))
+(assert (=> (and true |12|) (not |13|)))
+(assert (=> (and true |24|) (not |25|)))
+(assert (=> (and (or (not |0|) (and |9| true)) |74|) (not |75|)))
+(assert (=> (and true |13|) (not |14|)))
+(assert (=> (and true |63|) (not |64|)))
+(assert (=> (and true |52|) (not |53|)))
+(assert (=> (and true |41|) (not |42|)))
+(assert (=> (and true |73|) (not |74|)))
+(assert (=> (and true |2|) (not |3|)))
+(assert (=> (and true |30|) (not |31|)))
+(assert (=> (and |27| (or (not |19|) (not |78|) false) |62|) (not |63|)))
+(assert (=> (and true |14|) (not |15|)))
+(assert (=> (and true |51|) (not |52|)))
+(assert (=> (and true |40|) (not |41|)))
+(assert (=> (and true |61|) (not |62|)))
+(assert (=> (and true |50|) (not |51|)))
+(assert (=> (and true |72|) (not |73|)))
+(assert (=> (and true |66|) |65|))
+(assert (=> (and true |77|) |76|))
+(assert (=> (and true |28|) |27|))
+(assert (=> (and true |39|) |38|))
+(assert (=> (and true |29|) |28|))
+(assert (=> (and true |18|) |17|))
+(assert (=> (and (or (not |4|) (and |8| true)) |6|) |5|))
+(assert (=> (and |15| |58| true (or (not |18|) false) |8|) |7|))
+(assert (=> (and true |27|) |26|))
+(assert (=> (and true |78|) |77|))
+(assert (=> (and true |46|) |45|))
+(assert (=> (and true |38|) |37|))
+(assert (=> (and true |17|) |16|))
+(assert (=> (and true |56|) |55|))
+(assert (=> (and true |49|) |48|))
+(assert (=> (and true |67|) |66|))
+(assert (=> (and true |58|) |57|))
+(assert (=> (and true |47|) |46|))
+(assert (=> (and (or (not |6|) false) |26|) |25|))
+(assert (=> (and (or (not |7|) false) |36|) |35|))
+(assert (=> (and true |37|) |36|))
+(assert (=> (and true |68|) |67|))
+(assert (=> (and true |79|) |78|))
+(assert (=> (and true |48|) |47|))
+(assert (=> (and (or (not |5|) false) |16|) |15|))
+(assert (=> (and true |57|) |56|))
+(assert (=> (and true |59|) |58|))
+(assert (=> (and true |9|) |8|))
+(assert (=> (and true |7|) |6|))
+(assert (=> (and true |19|) |18|))
+(assert (=> (and true |76|) |75|))
+(assert (=> (and true |69|) |68|))
+
+Résultat : SATISFIABLE
+Solution
+(define-fun |78| () Bool
+  false)
+(define-fun |37| () Bool
+  false)
+(define-fun |3| () Bool
+  false)
+(define-fun |75| () Bool
+  false)
+(define-fun |77| () Bool
+  false)
+(define-fun |38| () Bool
+  false)
+(define-fun |2| () Bool
+  true)
+(define-fun |47| () Bool
+  false)
+(define-fun |67| () Bool
+  false)
+(define-fun |17| () Bool
+  false)
+(define-fun |56| () Bool
+  true)
+(define-fun |35| () Bool
+  false)
+(define-fun |65| () Bool
+  false)
+(define-fun |6| () Bool
+  false)
+(define-fun |55| () Bool
+  true)
+(define-fun |25| () Bool
+  true)
+(define-fun |27| () Bool
+  true)
+(define-fun |7| () Bool
+  false)
+(define-fun |1| () Bool
+  false)
+(define-fun |76| () Bool
+  false)
+(define-fun |28| () Bool
+  true)
+(define-fun |46| () Bool
+  false)
+(define-fun |15| () Bool
+  false)
+(define-fun |8| () Bool
+  false)
+(define-fun |57| () Bool
+  true)
+(define-fun |26| () Bool
+  true)
+(define-fun |16| () Bool
+  false)
+(define-fun |18| () Bool
+  false)
+(define-fun |36| () Bool
+  false)
+(define-fun |66| () Bool
+  false)
+(define-fun |68| () Bool
+  false)
+(define-fun |9| () Bool
+  false)
+(define-fun |45| () Bool
+  false)
+(define-fun |5| () Bool
+  false)
+(define-fun |58| () Bool
+  true)
+(define-fun |48| () Bool
+  false)
+(define-fun |69| () Bool
+  false)
+(define-fun |59| () Bool
+  true)
+(define-fun |79| () Bool
+  false)
+(define-fun |49| () Bool
+  false)
+(define-fun |29| () Bool
+  true)
+(define-fun |39| () Bool
+  false)
+(define-fun |50| () Bool
+  false)
+(define-fun |40| () Bool
+  true)
+(define-fun |51| () Bool
+  true)
+(define-fun |62| () Bool
+  true)
+(define-fun |19| () Bool
+  false)
+(define-fun |30| () Bool
+  true)
+(define-fun |73| () Bool
+  false)
+(define-fun |41| () Bool
+  false)
+(define-fun |52| () Bool
+  false)
+(define-fun |63| () Bool
+  false)
+(define-fun |14| () Bool
+  true)
+(define-fun |74| () Bool
+  true)
+(define-fun |13| () Bool
+  false)
+(define-fun |24| () Bool
+  false)
+(define-fun |34| () Bool
+  true)
+(define-fun |12| () Bool
+  true)
+(define-fun |23| () Bool
+  true)
+(define-fun |44| () Bool
+  true)
+(define-fun |22| () Bool
+  false)
+(define-fun |33| () Bool
+  false)
+(define-fun |11| () Bool
+  false)
+(define-fun |10| () Bool
+  true)
+(define-fun |64| () Bool
+  true)
+(define-fun |54| () Bool
+  true)
+(define-fun |53| () Bool
+  false)
+(define-fun |4| () Bool
+  true)
+(define-fun |43| () Bool
+  false)
+(define-fun |42| () Bool
+  true)
+(define-fun |0| () Bool
+  true)
+(define-fun |32| () Bool
+  true)
+(define-fun |31| () Bool
+  false)
+(define-fun |21| () Bool
+  false)
+(define-fun |20| () Bool
+  true)
+(define-fun |70| () Bool
+  false)
+(define-fun |61| () Bool
+  false)
+(define-fun |60| () Bool
+  true)
+(define-fun |72| () Bool
+  false)
+(define-fun |71| () Bool
+  true)
+
