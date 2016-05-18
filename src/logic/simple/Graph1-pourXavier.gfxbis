@@ -1,0 +1,35 @@
+; Sommet(s) :
+; 0 PréDef : UNDETERMINED
+; 1 PréDef : UNDETERMINED
+; 2 PréDef : UNDETERMINED
+; 3 PréDef : UNDETERMINED
+; Arc(s) appui(s):
+; (support0to0, 0, 0)
+; (support1to3, 1, 3)
+; Arc(s) attaque(s):
+; (attack0to3, 0, 3)
+; (attack2to2, 2, 2)
+; (attack3to2, 3, 2)
+
+
+;Traduction triviale 
+(declare-fun In3 () Bool)
+(declare-fun |0| () Bool)
+(declare-fun |3| () Bool)
+(declare-fun In2 () Bool)
+(declare-fun |2| () Bool)
+(declare-fun Pr0 () Bool)
+(declare-fun Pr1 () Bool)
+(declare-fun |1| () Bool)
+(assert (=> (and true |0|) In3))
+(assert (=> In3 (not |3|)))
+(assert (=> (and true |2|) In2))
+(assert (=> In2 (not |2|)))
+(assert (=> (and true |3|) In2))
+(assert (=> (and true |0|) Pr0))
+(assert (=> Pr0 |0|))
+(assert (=> (and true |3|) Pr1))
+(assert (=> Pr1 |1|))
+(check-sat) 
+;Résultat : 
+;SATISFIABLE
